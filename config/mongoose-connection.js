@@ -1,11 +1,13 @@
 const mongoose = require("mongoose");
+const config = require('config');
+const dbgr = require('debug')("development:mongoose");
 
 mongoose
-.connect("mongodb://127.0.0.1:27017/BAGs")
+.connect(`${config.get("MONGODB_URI")}/BAGs`) // dynamic 
 .then(function(){
     console.log("db connected");
 })
-.catch(function(err){
+.catch(function(err){ 
     console.log(err);
 })
 

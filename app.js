@@ -15,7 +15,7 @@ app.set("view engine","ejs");
 
 app.use("/owners",ownersRouter);
 app.use("/users",usersRouter);
-app.use("/products",productsRouter);
+app.use("/products",productsRouter)
 
 app.listen(3000,()=> {
     console.log("server running");
